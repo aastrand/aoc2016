@@ -1,0 +1,32 @@
+             // c = 1
+0  cpy 1 a   // a = 1
+1  cpy 1 b   // b = 1
+2  cpy 26 d  // d = 26
+3  jnz c 2   // part2: jmp 5
+4  jnz 1 5   // jmp 9
+
+5  cpy 7 c   // c = 7
+6  inc d     // d++  
+7  dec c     // c--
+8  jnz c -2  // if c != 0 jmp 6
+
+9  cpy a c   // c = a
+
+10 inc a     // a++
+11 dec b     // b--
+12 jnz b -2  // if b != 0 jmp 10 
+
+13 cpy c b   // b = c
+14 dec d     // d--
+15 jnz d -6  // if d != 0 jmp 9
+
+16 cpy 19 c  // c = 19
+
+17 cpy 11 d  // d = 11
+
+18 inc a     // a++
+19 dec d     // d--
+20 jnz d -2  // if d != 0 jmp 18
+
+21 dec c     // c--
+22 jnz c -5  // if c != 0 jmp 17
