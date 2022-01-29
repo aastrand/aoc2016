@@ -1,0 +1,48 @@
+0 cpy a b  // b = a
+1 dec b    // b --
+
+2 cpy a d  // d = a
+3 cpy 0 a  // a = 0
+
+4 cpy b c  // c = b
+
+5 inc a    // a++
+6 dec c    // c--
+7 jnz c -2 // if c != 0 JMP 5 => a = b*d?
+8 dec d    // d--
+9 jnz d -5 // if d != 0 JMP 4
+
+5 cpy a, d
+6 inc a
+7 mul a, b
+8 cpy 0 c
+9 cpy 0 d
+
+
+10 dec b   // b--
+11 cpy b c // c = b
+12 cpy c d // d = c
+
+13 dec d   // d--
+14 inc c   // c++
+15 jnz d -2// if d != 0 JMP 13
+16 tgl c   // magic happens here
+17 cpy -16 c // c = -16
+18 jnz 1 c   // JMP 2
+19 cpy 77 c  // c = 77
+20 jnz 87 d  // JMP d, or d = 87
+
+21 inc a     // a++
+22 inc d     // d++
+23 jnz d -2 // if d != 0 JMP 21
+
+24 inc c    // c++
+25 jnz c -5 //
+
+0 cpy 3 b
+1 cpu 2 d
+2 inc a    // a++
+3 dec c    // c--
+4 jnz c -2 // if c != 0 JMP 5 => a = b*(d+1)?
+5 dec d    // d--6
+9 jnz d -5 // if d != 0 JMP 4
