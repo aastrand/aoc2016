@@ -32,6 +32,17 @@ def build_graph(grid):
     return graph, points
 
 
+def get_path(n, prev):
+    path = []
+    u = n
+    if u in prev:
+        while u:
+            path.insert(0, u)
+            u = prev.get(u)
+
+    return path
+
+
 def solve(filename, ret=False):
     grid = get_grid(io.get_lines(filename))
     graph, points = build_graph(grid)
@@ -43,6 +54,11 @@ def solve(filename, ret=False):
         else:
             to_visit.append(p)
 
+    prevs = {}
+    for p in points:
+        _, _, prev = dijkstra(graph, p[1], None)
+        prevs[p[1]] = prev
+
     dist = {}
     min = sys.maxsize
     for p in permutations(to_visit):
@@ -52,9 +68,9 @@ def solve(filename, ret=False):
 
         s = 0
         for i in range(len(p) - 1):
-            pair = (p[i][0], p[i + 1][0])
+            pair = (p[i][1], p[i + 1][1])
             if pair not in dist:
-                path, _, _ = dijkstra(graph, p[i][1], p[i + 1][1])
+                path = get_path(p[i][1], prevs[p[i + 1][1]])
                 dist[pair] = len(path) - 1
             s += dist[pair]
         if s < min:
