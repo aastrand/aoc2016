@@ -44,3 +44,14 @@ def flood_fill(grid, pos, visitor):
             if grid.get(neighbour) == "#" and neighbour not in visited:
                 q.append(neighbour)
                 visited.add(neighbour)
+
+
+def get_grid(lines):
+    data = {}
+    maxX = len(lines[0])
+    maxY = len(lines)
+    for y, line in enumerate(lines):
+        for x, char in enumerate(line):
+            data[(x, y)] = char
+
+    return Grid(data, 0, maxX, 0, maxY)
