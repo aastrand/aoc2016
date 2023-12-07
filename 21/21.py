@@ -168,7 +168,7 @@ def main():
     assert rotate_letter("d", list("ecabd")) == list("decab")
 
     assert part1("abcde", "example.txt") == "decab"
-    print(part1("abcdefgh", "input.txt"))
+    print(part1("abcdefgh", "../input/2016/.txt"))
 
     assert swap_pos(0, 4, list("abcde")) == list("ebcda")
     assert swap_pos(4, 0, list("ebcda")) == list("abcde")
@@ -183,9 +183,9 @@ def main():
     assert move(1, 4, list("bcdea")) == list("bdeac")
     assert move(4, 1, list("bdeac")) == list("bcdea")
 
-    assert part2("dgfaehcb", "input.txt") == "abcdefgh"
-    assert part2("fbgdceah", "input.txt") == part2brute("fbgdceah", "input.txt")
-    print(part2brute("fbgdceah", "input.txt"))
+    assert part2("dgfaehcb", "../input/2016/.txt") == "abcdefgh"
+    assert part2("fbgdceah", "../input/2016/.txt") == part2brute("fbgdceah", "../input/2016/.txt")
+    print(part2brute("fbgdceah", "../input/2016/.txt"))
 
 
 if __name__ == "__main__":

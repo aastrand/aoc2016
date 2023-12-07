@@ -33,8 +33,8 @@ def solve(filename, part2=False):
 
 def main():
     assert solve("example.txt") == 5
-    print(solve("input.txt"))
-    print(solve("input.txt", True))
+    print(solve("../input/2016/.txt"))
+    print(solve("../input/2016/.txt", True))
 
 
 if __name__ == "__main__":

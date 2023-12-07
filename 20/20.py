@@ -53,7 +53,7 @@ def main():
     assert test[0] == 3
     assert test[1] == 2
 
-    r = solve("input.txt", 4294967295)
+    r = solve("../input/2016/.txt", 4294967295)
     print(r[0])
     print(r[1])
 

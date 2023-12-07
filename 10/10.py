@@ -66,7 +66,7 @@ def solve(filename, cmp1, cmp2):
 
 def main():
     assert solve("example.txt", 5, 2)[0] == 2
-    r = solve("input.txt", 61, 17)
+    r = solve("../input/2016/.txt", 61, 17)
     print(r[0])
     print(r[1])
 

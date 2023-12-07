@@ -63,10 +63,10 @@ def part2(filename):
 
 def main():
     assert part1("example.txt") == 6 + 7 + 9 + 11 + 6 + 18
-    print(part1("input.txt"))
+    print(part1("../input/2016/.txt"))
 
     assert decompress("(27x12)(20x12)(13x14)(7x10)(1x12)A", True) == 241920
-    print(part2("input.txt"))
+    print(part2("../input/2016/.txt"))
 
 
 if __name__ == "__main__":
